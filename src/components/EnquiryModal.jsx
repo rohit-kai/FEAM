@@ -147,12 +147,10 @@ export default function EnquiryModal({ isOpen, onClose, initialInterest = 'Gener
                   className="luxury-input"
                   style={{ cursor: 'pointer' }}
                 >
-                  <option value="Residential - Aestate Villa Krabi" style={{ background: '#1E2229' }}>Residential · Aestate Villa Krabi</option>
-                  <option value="Hospitality Investment & Hotel Portfolios" style={{ background: '#1E2229' }}>Hospitality Investment &amp; Hotel Portfolios</option>
-                  <option value="Real Estate Development & Asset Management" style={{ background: '#1E2229' }}>Real Estate Development &amp; Asset Management</option>
-                  <option value="Commercial & Retail Lease Structuring" style={{ background: '#1E2229' }}>Commercial &amp; Retail Lease Structuring</option>
-                  <option value="Asset Repositioning & Disposal Strategy" style={{ background: '#1E2229' }}>Asset Repositioning &amp; Disposal Strategy</option>
-                  <option value="General Private Concierge" style={{ background: '#1E2229' }}>General Private Concierge</option>
+                  <option value="Institutional & Private Co-Investment" style={{ background: '#101C3A' }}>Institutional &amp; Private Co-Investment</option>
+                  <option value="Commercial & Retail Tenancy Opportunities" style={{ background: '#101C3A' }}>Commercial &amp; Retail Tenancy Opportunities</option>
+                  <option value="Hospitality Advisory & Asset Management" style={{ background: '#101C3A' }}>Hospitality Advisory &amp; Asset Management</option>
+                  <option value="Land Acquisitions & Joint Venture Development" style={{ background: '#101C3A' }}>Land Acquisitions &amp; Joint Venture Development</option>
                 </select>
               </div>
 

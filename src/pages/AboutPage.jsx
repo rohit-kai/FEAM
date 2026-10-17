@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
-import { FOUNDERS, CORE_VALUES, HERITAGE_TIMELINE } from '../data/siteData';
-import { Award, ShieldCheck, Leaf, ArrowRight, Mail, ChevronRight } from 'lucide-react';
+import { COMPANY_INFO, CORE_VALUES, MISSION_PILLARS, LEADERSHIP } from '../data/siteData';
+import { Mail, Check, ChevronRight } from 'lucide-react';
 
 export default function AboutPage({ onNavigate, onOpenEnquiry }) {
   return (
@@ -18,7 +18,7 @@ export default function AboutPage({ onNavigate, onOpenEnquiry }) {
         <Header
           activePage="about"
           onNavigate={onNavigate}
-          onOpenEnquiry={() => onOpenEnquiry('General Investment')}
+          onOpenEnquiry={() => onOpenEnquiry('Institutional & Private Co-Investment')}
           isDarkHeader={true}
         />
 
@@ -44,21 +44,21 @@ export default function AboutPage({ onNavigate, onOpenEnquiry }) {
             }}
           >
             <span style={{ width: '32px', height: '1px', background: 'var(--accent-gold)' }} />
-            About EAM Group
+            About Us &amp; Heritage
           </div>
 
           <h1
             style={{
               fontFamily: 'var(--font-serif)',
-              fontSize: '56px',
+              fontSize: '54px',
               fontWeight: 500,
               lineHeight: 1.15,
               color: 'var(--bg-light)',
               maxWidth: '850px',
-              marginBottom: '24px'
+              marginBottom: '20px'
             }}
           >
-            Two Decades of Restraint, Service &amp; Stewardship
+            {COMPANY_INFO.name}
           </h1>
 
           <p
@@ -69,12 +69,12 @@ export default function AboutPage({ onNavigate, onOpenEnquiry }) {
               opacity: 0.92
             }}
           >
-            EAM Bangkok was founded in 2004 by Supakit Eimsamank, originating from multi-generational family asset management, land development, and property operations across Thailand.
+            {COMPANY_INFO.tagline}
           </p>
         </div>
       </section>
 
-      {/* Legacy & Foundation Narrative */}
+      {/* Founding & Roots and Strategic Evolution */}
       <section style={{ padding: '96px 48px', background: '#ffffff' }}>
         <div
           style={{
@@ -89,7 +89,7 @@ export default function AboutPage({ onNavigate, onOpenEnquiry }) {
           <div>
             <div className="gold-badge" style={{ marginBottom: '16px' }}>
               <span className="gold-line" />
-              The Founding Philosophy
+              Founding &amp; Roots
             </div>
             <h2
               style={{
@@ -97,85 +97,73 @@ export default function AboutPage({ onNavigate, onOpenEnquiry }) {
                 fontSize: '38px',
                 lineHeight: 1.25,
                 color: 'var(--text-dark)',
-                marginBottom: '24px'
+                marginBottom: '20px'
               }}
             >
-              "True luxury is measured in restraint, in service remembered years later."
+              Established 2004 in Bangkok
             </h2>
             <p style={{ fontSize: '16px', lineHeight: 1.8, color: 'var(--text-dark)', marginBottom: '20px' }}>
-              Unlike speculative developers driven by transient fashion, EAM has maintained a steadfast doctrine: acquire irreplaceable locations, structure legally sound frameworks, and operate with long-term capital stewardship.
+              Founded in 2004 by Supakit Eimsamank, rooted in decades of family-office real estate development, asset administration, property enhancement, and long-term investment operations.
             </p>
-            <p style={{ fontSize: '16px', lineHeight: 1.8, color: 'var(--text-dark)' }}>
-              From prime commercial retail management in central Bangkok to ultra-luxury tropical residential villas in Ao Nang, Krabi and landmark coastal hospitality investments with Destination Resorts Group, our portfolio exemplifies enduring value.
-            </p>
+            <div style={{ borderTop: '1px solid rgba(112, 138, 114, 0.25)', paddingTop: '20px' }}>
+              <div style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent-gold-dark)', marginBottom: '8px' }}>
+                Strategic Evolution
+              </div>
+              <p style={{ fontSize: '15.5px', lineHeight: 1.8, color: 'var(--text-muted)' }}>
+                Transitioned from managing private family holdings into a multi-sector platform covering retail centers, residential developments, hotel investments, and human capital solutions.
+              </p>
+            </div>
           </div>
 
+          {/* Corporate Mission Box */}
           <div
             style={{
               backgroundColor: 'var(--bg-light)',
               border: '1px solid rgba(112, 138, 114, 0.3)',
               borderTop: '4px solid var(--accent-gold)',
-              padding: '48px 40px'
+              padding: '44px 36px'
             }}
           >
+            <div style={{ fontSize: '11px', letterSpacing: '.2em', textTransform: 'uppercase', color: 'var(--accent-gold-dark)', fontWeight: 600, marginBottom: '8px' }}>
+              Corporate Mission
+            </div>
             <h3
               style={{
                 fontFamily: 'var(--font-serif)',
                 fontSize: '26px',
                 color: 'var(--primary-green)',
-                marginBottom: '24px'
+                marginBottom: '20px'
               }}
             >
-              Key Institutional Pillars
+              Creating sustainable value through strategic growth and asset excellence.
             </h3>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              <div style={{ display: 'flex', gap: '16px' }}>
-                <span style={{ color: 'var(--accent-gold)', fontWeight: 700, fontSize: '18px' }}>01</span>
-                <div>
-                  <h4 style={{ fontSize: '17px', fontWeight: 600, color: 'var(--text-dark)', marginBottom: '4px' }}>
-                    Family Office Governance
-                  </h4>
-                  <p style={{ fontSize: '14.5px', color: 'var(--text-muted)' }}>
-                    Generational capital alignment ensuring investments endure through multi-decade economic cycles.
-                  </p>
-                </div>
-              </div>
 
-              <div style={{ display: 'flex', gap: '16px' }}>
-                <span style={{ color: 'var(--accent-gold)', fontWeight: 700, fontSize: '18px' }}>02</span>
-                <div>
-                  <h4 style={{ fontSize: '17px', fontWeight: 600, color: 'var(--text-dark)', marginBottom: '4px' }}>
-                    Institutional Operator Partnerships
-                  </h4>
-                  <p style={{ fontSize: '14.5px', color: 'var(--text-muted)' }}>
-                    Co-investing alongside proven hospitality operators like Destination Resorts Group to maximize RevPAR.
-                  </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              {MISSION_PILLARS.map((p, idx) => (
+                <div key={idx} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <span style={{ color: 'var(--accent-gold)', fontWeight: 700 }}>0{idx + 1}</span>
+                  <div>
+                    <h4 style={{ fontSize: '15.5px', fontWeight: 600, color: 'var(--text-dark)', marginBottom: '2px' }}>
+                      {p.title}
+                    </h4>
+                    <p style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: 1.5 }}>
+                      {p.desc}
+                    </p>
+                  </div>
                 </div>
-              </div>
-
-              <div style={{ display: 'flex', gap: '16px' }}>
-                <span style={{ color: 'var(--accent-gold)', fontWeight: 700, fontSize: '18px' }}>03</span>
-                <div>
-                  <h4 style={{ fontSize: '17px', fontWeight: 600, color: 'var(--text-dark)', marginBottom: '4px' }}>
-                    Uncompromising Legal Rigor
-                  </h4>
-                  <p style={{ fontSize: '14.5px', color: 'var(--text-muted)' }}>
-                    Full 30-year registered government leases, transparent titling, and clear regulatory compliance.
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Leadership Section */}
+      {/* Leadership & Governance Section */}
       <section style={{ padding: '96px 48px', background: 'var(--bg-light)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ maxWidth: '720px', marginBottom: '56px' }}>
             <div className="gold-badge" style={{ marginBottom: '16px' }}>
               <span className="gold-line" />
-              Executive Leadership
+              Leadership &amp; Governance
             </div>
             <h2
               style={{
@@ -185,137 +173,125 @@ export default function AboutPage({ onNavigate, onOpenEnquiry }) {
                 marginBottom: '16px'
               }}
             >
-              The Minds Behind The Legacy
+              Executive Leadership
             </h2>
-            <p style={{ fontSize: '16px', lineHeight: 1.7, color: 'var(--text-dark)' }}>
-              Under the joint stewardship of our Managing Director and Chief Executive Officer, EAM has evolved into an agile, highly respected real estate and hospitality investment powerhouse.
-            </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(420px, 1fr))', gap: '40px' }}>
-            {FOUNDERS.map((founder, idx) => (
-              <article
-                key={idx}
-                className="card-hover-lift"
+          {/* Founder Profile */}
+          <div
+            style={{
+              background: '#ffffff',
+              border: '1px solid rgba(112, 138, 114, 0.3)',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gap: '40px',
+              overflow: 'hidden',
+              alignItems: 'center',
+              marginBottom: '56px',
+              boxShadow: 'var(--shadow-subtle)'
+            }}
+          >
+            <div style={{ height: '100%', minHeight: '380px' }}>
+              <img
+                src={LEADERSHIP.founder.image}
+                alt={LEADERSHIP.founder.name}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }}
+              />
+            </div>
+            <div style={{ padding: '40px 48px 40px 0' }}>
+              <div style={{ fontSize: '11px', letterSpacing: '.2em', textTransform: 'uppercase', color: 'var(--secondary-sage)', fontWeight: 600, marginBottom: '6px' }}>
+                Founder &amp; Managing Director
+              </div>
+              <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '34px', color: 'var(--primary-green)', marginBottom: '8px' }}>
+                {LEADERSHIP.founder.name}
+              </h3>
+              <div style={{ fontSize: '13px', fontWeight: 600, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent-gold-dark)', marginBottom: '20px' }}>
+                {LEADERSHIP.founder.title}
+              </div>
+              <p style={{ fontSize: '16px', lineHeight: 1.8, color: 'var(--text-dark)', marginBottom: '24px' }}>
+                {LEADERSHIP.founder.bio}
+              </p>
+              <a
+                href={`mailto:${LEADERSHIP.founder.email}`}
                 style={{
-                  background: '#ffffff',
-                  border: '1px solid rgba(112, 138, 114, 0.3)',
-                  overflow: 'hidden',
-                  display: 'flex',
-                  flexDirection: 'column'
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  padding: '12px 22px',
+                  border: '1px solid var(--secondary-sage)',
+                  borderRadius: '999px',
+                  fontSize: '12px',
+                  fontWeight: 600,
+                  color: 'var(--primary-green)'
                 }}
               >
-                <div style={{ height: '360px', overflow: 'hidden' }}>
-                  <img
-                    src={founder.image}
-                    alt={founder.role}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
-                  />
-                </div>
-                <div style={{ padding: '36px', display: 'flex', flexDirection: 'column', flex: 1 }}>
-                  <span style={{ fontSize: '12px', letterSpacing: '.2em', color: 'var(--secondary-sage)', fontWeight: 600, marginBottom: '8px' }}>
-                    {founder.number} &mdash;
-                  </span>
-                  <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '28px', color: 'var(--primary-green)', marginBottom: '6px' }}>
-                    {founder.role}
-                  </h3>
-                  <div style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent-gold-dark)', marginBottom: '16px' }}>
-                    {founder.title}
+                <Mail size={15} />
+                <span>Contact Leadership</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Executive Board & Advisory Focus */}
+          <div>
+            <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '28px', color: 'var(--primary-green)', marginBottom: '24px' }}>
+              Executive Board &amp; Advisory Focus
+            </h3>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '28px' }}>
+              {LEADERSHIP.advisoryFocus.map((focus, idx) => (
+                <div
+                  key={idx}
+                  style={{
+                    background: '#ffffff',
+                    border: '1px solid rgba(112, 138, 114, 0.25)',
+                    borderTop: '3px solid var(--accent-gold)',
+                    padding: '32px 28px'
+                  }}
+                >
+                  <div style={{ fontSize: '11px', letterSpacing: '.18em', textTransform: 'uppercase', color: 'var(--secondary-sage)', fontWeight: 600, marginBottom: '8px' }}>
+                    Advisory Focus 0{idx + 1}
                   </div>
-                  <p style={{ fontSize: '15px', lineHeight: 1.7, color: 'var(--text-dark)', marginBottom: '24px' }}>
-                    {founder.bio}
+                  <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '22px', color: 'var(--text-dark)', marginBottom: '10px' }}>
+                    {focus.title}
+                  </h4>
+                  <p style={{ fontSize: '14.5px', lineHeight: 1.7, color: 'var(--text-muted)' }}>
+                    {focus.desc}
                   </p>
-                  <div style={{ marginTop: 'auto', borderTop: '1px solid rgba(112, 138, 114, 0.25)', paddingTop: '16px', display: 'flex', gap: '12px' }}>
-                    <a
-                      href={founder.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{
-                        padding: '10px 18px',
-                        border: '1px solid var(--secondary-sage)',
-                        borderRadius: '999px',
-                        fontSize: '12px',
-                        fontWeight: 600,
-                        color: 'var(--primary-green)'
-                      }}
-                    >
-                      LinkedIn Profile
-                    </a>
-                    <a
-                      href={`mailto:${founder.email}`}
-                      style={{
-                        padding: '10px 18px',
-                        border: '1px solid var(--secondary-sage)',
-                        borderRadius: '999px',
-                        fontSize: '12px',
-                        fontWeight: 600,
-                        color: 'var(--primary-green)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '6px'
-                      }}
-                    >
-                      <Mail size={14} />
-                      Direct Inquiry
-                    </a>
-                  </div>
                 </div>
-              </article>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Interactive Heritage Timeline */}
+      {/* Core Values Section */}
       <section style={{ padding: '96px 48px', background: '#ffffff' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 64px' }}>
-            <div className="gold-badge" style={{ marginBottom: '16px', justifyContent: 'center' }}>
+          <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 56px' }}>
+            <div className="gold-badge" style={{ justifyContent: 'center', marginBottom: '14px' }}>
               <span className="gold-line" />
-              Two Decades of Growth
+              Foundational Principles
             </div>
             <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '42px', color: 'var(--text-dark)' }}>
-              Heritage &amp; Milestones
+              Core Values
             </h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '32px' }}>
-            {HERITAGE_TIMELINE.map((item, idx) => (
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '24px' }}>
+            {CORE_VALUES.map((val, idx) => (
               <div
                 key={idx}
                 className="card-hover-lift"
                 style={{
                   background: 'var(--bg-light)',
-                  padding: '32px',
-                  borderTop: '3px solid var(--accent-gold)',
-                  position: 'relative'
+                  padding: '32px 26px',
+                  borderTop: '3px solid var(--accent-gold)'
                 }}
               >
-                <div
-                  style={{
-                    fontFamily: 'var(--font-serif)',
-                    fontSize: '38px',
-                    color: 'var(--accent-gold-dark)',
-                    fontWeight: 600,
-                    lineHeight: 1,
-                    marginBottom: '14px'
-                  }}
-                >
-                  {item.year}
-                </div>
-                <h4
-                  style={{
-                    fontFamily: 'var(--font-serif)',
-                    fontSize: '20px',
-                    color: 'var(--primary-green)',
-                    marginBottom: '10px',
-                    lineHeight: 1.3
-                  }}
-                >
-                  {item.title}
+                <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '22px', color: 'var(--primary-green)', marginBottom: '10px' }}>
+                  {val.title}
                 </h4>
                 <p style={{ fontSize: '14.5px', lineHeight: 1.7, color: 'var(--text-dark)' }}>
-                  {item.desc}
+                  {val.desc}
                 </p>
               </div>
             ))}
@@ -323,77 +299,21 @@ export default function AboutPage({ onNavigate, onOpenEnquiry }) {
         </div>
       </section>
 
-      {/* Institutional Certifications Strip */}
-      <section
-        style={{
-          backgroundColor: 'var(--primary-green)',
-          color: 'var(--bg-light)',
-          padding: '72px 48px'
-        }}
-      >
-        <div
-          style={{
-            maxWidth: '1200px',
-            margin: '0 auto',
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            gap: '36px'
-          }}
-        >
-          <div>
-            <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '32px', color: 'var(--bg-light)', marginBottom: '8px' }}>
-              Certified Excellence &amp; ESG Standards
-            </h3>
-            <p style={{ fontSize: '16px', opacity: 0.85, maxWidth: '600px' }}>
-              Our assets adhere to international hospitality benchmarks, quality management systems, and sustainable eco-footprint criteria.
-            </p>
-          </div>
-
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
-            <div style={{ border: '1px solid rgba(191,153,68,0.5)', padding: '16px 24px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <Award size={24} color="var(--accent-gold)" />
-              <div>
-                <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--accent-gold)', letterSpacing: '.1em' }}>FORBES TRAVEL</div>
-                <div style={{ fontSize: '12px', opacity: 0.85 }}>Four-Star Hospitality Standard</div>
-              </div>
-            </div>
-
-            <div style={{ border: '1px solid rgba(191,153,68,0.5)', padding: '16px 24px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <ShieldCheck size={24} color="var(--accent-gold)" />
-              <div>
-                <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--accent-gold)', letterSpacing: '.1em' }}>ISO 9001:2015</div>
-                <div style={{ fontSize: '12px', opacity: 0.85 }}>Quality Management Certified</div>
-              </div>
-            </div>
-
-            <div style={{ border: '1px solid rgba(191,153,68,0.5)', padding: '16px 24px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <Leaf size={24} color="var(--accent-gold)" />
-              <div>
-                <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--accent-gold)', letterSpacing: '.1em' }}>GREEN KEY</div>
-                <div style={{ fontSize: '12px', opacity: 0.85 }}>Global Eco-Rating Benchmark</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Subpage CTA */}
-      <section style={{ padding: '80px 48px', textAlign: 'center', background: '#ffffff' }}>
+      <section style={{ padding: '80px 48px', textAlign: 'center', background: 'var(--primary-green)', color: 'var(--bg-light)' }}>
         <div style={{ maxWidth: '700px', margin: '0 auto' }}>
-          <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '36px', color: 'var(--text-dark)', marginBottom: '16px' }}>
-            Partner With EAM Bangkok
+          <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '36px', color: 'var(--bg-light)', marginBottom: '16px' }}>
+            Partner With {COMPANY_INFO.name}
           </h2>
-          <p style={{ fontSize: '16px', lineHeight: 1.7, color: 'var(--text-muted)', marginBottom: '32px' }}>
-            Whether discussing hotel investment structuring, private villa acquisitions, or family asset repositioning, our executive team welcomes confidential dialogues.
+          <p style={{ fontSize: '16px', lineHeight: 1.7, opacity: 0.9, marginBottom: '32px' }}>
+            Delivering long-term asset value creation through practical operational expertise, disciplined property stewardship, and institutional investment structuring.
           </p>
           <button
             type="button"
             className="btn-gold"
-            onClick={() => onOpenEnquiry('General Investment')}
+            onClick={() => onOpenEnquiry('Institutional & Private Co-Investment')}
           >
-            <span>Connect with our Principals</span>
+            <span>Contact Our Team</span>
             <ChevronRight size={16} />
           </button>
         </div>

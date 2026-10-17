@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
-import { CAPABILITIES } from '../data/siteData';
-import { Check, ChevronRight, ArrowUpRight, Layers, Target, TrendingUp, Shield } from 'lucide-react';
+import { CORE_VERTICALS, COMPANY_INFO } from '../data/siteData';
+import { ChevronRight, ArrowUpRight, Check } from 'lucide-react';
 
 export default function CapabilitiesPage({ onNavigate, onOpenEnquiry }) {
-  const [activeCapId, setActiveCapId] = useState(CAPABILITIES[0].id);
-  const activeCap = CAPABILITIES.find(c => c.id === activeCapId) || CAPABILITIES[0];
+  const [activeCapId, setActiveCapId] = useState(CORE_VERTICALS[0].id);
+  const activeCap = CORE_VERTICALS.find(c => c.id === activeCapId) || CORE_VERTICALS[0];
 
   return (
     <div style={{ width: '100%', backgroundColor: 'var(--bg-light)' }}>
@@ -21,7 +21,7 @@ export default function CapabilitiesPage({ onNavigate, onOpenEnquiry }) {
         <Header
           activePage="capabilities"
           onNavigate={onNavigate}
-          onOpenEnquiry={() => onOpenEnquiry('Capabilities & Advisory')}
+          onOpenEnquiry={() => onOpenEnquiry('Commercial & Retail Tenancy Opportunities')}
           isDarkHeader={true}
         />
 
@@ -47,21 +47,21 @@ export default function CapabilitiesPage({ onNavigate, onOpenEnquiry }) {
             }}
           >
             <span style={{ width: '32px', height: '1px', background: 'var(--accent-gold)' }} />
-            Institutional Capabilities
+            Business Verticals
           </div>
 
           <h1
             style={{
               fontFamily: 'var(--font-serif)',
-              fontSize: '56px',
+              fontSize: '54px',
               fontWeight: 500,
               lineHeight: 1.15,
               color: 'var(--bg-light)',
               maxWidth: '850px',
-              marginBottom: '24px'
+              marginBottom: '20px'
             }}
           >
-            Seven Areas, One Long-Term Focus
+            Core Business Verticals
           </h1>
 
           <p
@@ -72,7 +72,7 @@ export default function CapabilitiesPage({ onNavigate, onOpenEnquiry }) {
               opacity: 0.92
             }}
           >
-            From high-value land development and commercial lease structuring to luxury resort acquisitions and workforce solutions, EAM deploys integrated capabilities across the property asset lifecycle.
+            {COMPANY_INFO.valueStatement}
           </p>
         </div>
       </section>
@@ -81,7 +81,7 @@ export default function CapabilitiesPage({ onNavigate, onOpenEnquiry }) {
       <section style={{ padding: '96px 48px', background: '#ffffff' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '48px' }}>
-            {/* Left Nav List of 7 areas */}
+            {/* Left Nav List of 6 areas */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
               <div
                 style={{
@@ -93,10 +93,10 @@ export default function CapabilitiesPage({ onNavigate, onOpenEnquiry }) {
                   marginBottom: '12px'
                 }}
               >
-                Select Discipline
+                Select Vertical
               </div>
 
-              {CAPABILITIES.map((cap, idx) => {
+              {CORE_VERTICALS.map((cap, idx) => {
                 const isActive = cap.id === activeCap.id;
                 return (
                   <button
@@ -120,7 +120,7 @@ export default function CapabilitiesPage({ onNavigate, onOpenEnquiry }) {
                   >
                     <div>
                       <div style={{ fontSize: '11px', letterSpacing: '.16em', textTransform: 'uppercase', color: isActive ? 'var(--accent-gold)' : 'var(--secondary-sage)', marginBottom: '4px' }}>
-                        Area 0{idx + 1}
+                        Vertical 0{idx + 1}
                       </div>
                       <div style={{ fontFamily: 'var(--font-serif)', fontSize: '18px', fontWeight: 600 }}>
                         {cap.title}
@@ -147,7 +147,7 @@ export default function CapabilitiesPage({ onNavigate, onOpenEnquiry }) {
               <div>
                 <div className="gold-badge" style={{ marginBottom: '16px' }}>
                   <span className="gold-line" />
-                  Discipline Overview
+                  Vertical Scope &amp; Focus
                 </div>
 
                 <h2
@@ -161,13 +161,13 @@ export default function CapabilitiesPage({ onNavigate, onOpenEnquiry }) {
                   {activeCap.title}
                 </h2>
 
-                <p style={{ fontSize: '17px', lineHeight: 1.8, color: 'var(--text-dark)', marginBottom: '24px' }}>
-                  {activeCap.details}
+                <p style={{ fontSize: '17px', lineHeight: 1.8, color: 'var(--text-dark)', marginBottom: '28px' }}>
+                  {activeCap.desc}
                 </p>
 
                 <div style={{ borderTop: '1px solid rgba(112, 138, 114, 0.3)', paddingTop: '24px', marginBottom: '32px' }}>
                   <h4 style={{ fontSize: '13px', fontWeight: 600, letterSpacing: '.16em', textTransform: 'uppercase', color: 'var(--accent-gold-dark)', marginBottom: '16px' }}>
-                    Key Focus &amp; Value Deliverables
+                    Operational Highlights &amp; Execution
                   </h4>
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '14px' }}>
                     {activeCap.highlights.map((h, i) => (
@@ -190,118 +190,30 @@ export default function CapabilitiesPage({ onNavigate, onOpenEnquiry }) {
                   className="btn-gold"
                   onClick={() => onOpenEnquiry(activeCap.title)}
                 >
-                  <span>Request Advisory Proposal</span>
+                  <span>Inquire Regarding This Vertical</span>
                   <ArrowUpRight size={16} />
                 </button>
-                {activeCap.id === 'residential' && (
-                  <button
-                    type="button"
-                    className="btn-outline-gold"
-                    style={{ borderColor: 'var(--primary-green)', color: 'var(--primary-green)' }}
-                    onClick={() => onNavigate('residential')}
-                  >
-                    <span>View Aestate Villa Project</span>
-                  </button>
-                )}
-                {activeCap.id === 'hospitality' && (
-                  <button
-                    type="button"
-                    className="btn-outline-gold"
-                    style={{ borderColor: 'var(--primary-green)', color: 'var(--primary-green)' }}
-                    onClick={() => onNavigate('hospitality')}
-                  >
-                    <span>View Hotel Destinations</span>
-                  </button>
-                )}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Advisory & Execution Lifecycle Diagram */}
-      <section style={{ padding: '96px 48px', background: 'var(--bg-light)' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 64px' }}>
-            <div className="gold-badge" style={{ marginBottom: '16px', justifyContent: 'center' }}>
-              <span className="gold-line" />
-              Operational Framework
-            </div>
-            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '42px', color: 'var(--text-dark)' }}>
-              The EAM Asset Lifecycle
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--text-muted)', marginTop: '12px' }}>
-              A disciplined, risk-managed path from identification to generational yield creation.
-            </p>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '24px' }}>
-            <div style={{ background: '#fff', padding: '36px 28px', borderTop: '3px solid var(--accent-gold)' }}>
-              <div style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '.2em', color: 'var(--secondary-sage)', marginBottom: '8px' }}>
-                STAGE 01
-              </div>
-              <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '22px', color: 'var(--primary-green)', marginBottom: '12px' }}>
-                Sourcing &amp; Due Diligence
-              </h3>
-              <p style={{ fontSize: '14.5px', lineHeight: 1.7, color: 'var(--text-dark)' }}>
-                Rigorous land titling verification, environmental assessments, zoning analysis, and proprietary off-market origination.
-              </p>
-            </div>
-
-            <div style={{ background: '#fff', padding: '36px 28px', borderTop: '3px solid var(--accent-gold)' }}>
-              <div style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '.2em', color: 'var(--secondary-sage)', marginBottom: '8px' }}>
-                STAGE 02
-              </div>
-              <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '22px', color: 'var(--primary-green)', marginBottom: '12px' }}>
-                Structuring &amp; Underwriting
-              </h3>
-              <p style={{ fontSize: '14.5px', lineHeight: 1.7, color: 'var(--text-dark)' }}>
-                30-year registered lease architectures, tax-efficient JV syndications, debt optimization, and risk-adjusted return underwriting.
-              </p>
-            </div>
-
-            <div style={{ background: '#fff', padding: '36px 28px', borderTop: '3px solid var(--accent-gold)' }}>
-              <div style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '.2em', color: 'var(--secondary-sage)', marginBottom: '8px' }}>
-                STAGE 03
-              </div>
-              <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '22px', color: 'var(--primary-green)', marginBottom: '12px' }}>
-                Value Creation &amp; Ops
-              </h3>
-              <p style={{ fontSize: '14.5px', lineHeight: 1.7, color: 'var(--text-dark)' }}>
-                World-class architectural execution, institutional operator collaboration with Destination Resorts Group, and active yield enhancement.
-              </p>
-            </div>
-
-            <div style={{ background: '#fff', padding: '36px 28px', borderTop: '3px solid var(--accent-gold)' }}>
-              <div style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '.2em', color: 'var(--secondary-sage)', marginBottom: '8px' }}>
-                STAGE 04
-              </div>
-              <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '22px', color: 'var(--primary-green)', marginBottom: '12px' }}>
-                Stewardship &amp; Exit
-              </h3>
-              <p style={{ fontSize: '14.5px', lineHeight: 1.7, color: 'var(--text-dark)' }}>
-                Generational holding structures, strategic portfolio refinancing, or discreet private disposition timed to market peak.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Footer Section */}
-      <section style={{ padding: '80px 48px', textAlign: 'center', background: '#ffffff', borderTop: '1px solid rgba(112,138,114,0.2)' }}>
+      {/* Subpage CTA */}
+      <section style={{ padding: '80px 48px', textAlign: 'center', background: 'var(--primary-green)', color: 'var(--bg-light)' }}>
         <div style={{ maxWidth: '700px', margin: '0 auto' }}>
-          <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '36px', color: 'var(--text-dark)', marginBottom: '16px' }}>
-            Retain EAM as Your Strategic Advisor
+          <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '36px', color: 'var(--bg-light)', marginBottom: '16px' }}>
+            Explore Joint Venture &amp; Tenancy Opportunities
           </h2>
-          <p style={{ fontSize: '16px', lineHeight: 1.7, color: 'var(--text-muted)', marginBottom: '32px' }}>
-            Connect with our executive principals for corporate proposals, hospitality underwriting, or asset management mandate discussions.
+          <p style={{ fontSize: '16px', lineHeight: 1.7, opacity: 0.9, marginBottom: '32px' }}>
+            We welcome institutional counterparties, prospective tenants, and hospitality partners to connect with our asset managers.
           </p>
           <button
             type="button"
             className="btn-gold"
-            onClick={() => onOpenEnquiry('Capabilities & Advisory')}
+            onClick={() => onOpenEnquiry('Commercial & Retail Tenancy Opportunities')}
           >
-            <span>Initiate Advisory Dialogue</span>
+            <span>Contact Our Team</span>
             <ChevronRight size={16} />
           </button>
         </div>
