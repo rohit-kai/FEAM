@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 110" fill="none">
+  <!-- Architectural Luxury Monogram Crest -->
+  <g transform="translate(10, 15)">
+    <rect x="0" y="0" width="80" height="80" rx="2" stroke="#BF9944" stroke-width="1.5" fill="rgba(191,153,68,0.06)" />
+    <rect x="6" y="6" width="68" height="68" rx="1" stroke="#BF9944" stroke-width="0.75" stroke-dasharray="2 2" fill="none" opacity="0.6" />
+    
+    <!-- Stylized Classical Column / Monogram Structure -->
+    <path d="M22 62V24H32L40 44L48 24H58V62H50V36L42 56H38L30 36V62H22Z" fill="#BF9944" />
+    <path d="M16 18H64M20 21H60M16 66H64" stroke="#BF9944" stroke-width="1.2" stroke-linecap="round" />
+    <!-- Diamond Accent -->
+    <polygon points="40,11 43,15 40,19 37,15" fill="#BF9944" />
+  </g>
+
+  <!-- Typography -->
+  <g transform="translate(106, 20)">
+    <!-- Primary Brand Name -->
+    <text x="0" y="38" font-family="'Playfair Display', Georgia, serif" font-size="36" font-weight="600" letter-spacing="0.18em" fill="#FFFFFF">EAM</text>
+    <text x="115" y="36" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="500" letter-spacing="0.28em" fill="#BF9944">ESTATE</text>
+    
+    <!-- Separator Line -->
+    <line x1="0" y1="48" x2="290" y2="48" stroke="#BF9944" stroke-width="1" opacity="0.4" />
+    
+    <!-- Subtitle / Discipline -->
+    <text x="0" y="64" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="600" letter-spacing="0.22em" fill="#F9F8F6" opacity="0.85">HOSPITALITY INVESTMENT</text>
+    <text x="0" y="78" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="500" letter-spacing="0.2em" fill="#BF9944" opacity="0.9">BANGKOK · EST. 2004</text>
+  </g>
+</svg>

@@ -1,0 +1,298 @@
+/* ==========================================================================
+   EAM ESTATE & HOSPITALITY INVESTMENT — LUXURY DESIGN SYSTEM
+   ========================================================================== */
+
+:root {
+  /* Default Primary Brand Color: Logo Navy */
+  --primary-green: #101C3A;
+  --primary-green-rgb: 16, 28, 58;
+  --secondary-sage: #708A72;
+  --secondary-sage-rgb: 112, 138, 114;
+  --accent-gold: #BF9944;
+  --accent-gold-rgb: 191, 153, 68;
+  --accent-gold-light: #DFC07A;
+  --accent-gold-dark: #8A6D3B;
+  --bg-light: #F9F8F6;
+  --bg-dark: #2C3531;
+  --text-dark: #1E2229;
+  --text-muted: #5E6773;
+  --text-light: #F9F8F6;
+  
+  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-elevated: 0 16px 40px rgba(0, 0, 0, 0.08);
+  --shadow-gold: 0 8px 30px rgba(191, 153, 68, 0.2);
+  --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--bg-light);
+}
+
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Typography Helpers */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin: 0;
+  color: var(--text-dark);
+}
+
+p {
+  margin: 0;
+  line-height: 1.75;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+a:hover {
+  opacity: 0.85;
+}
+
+button {
+  font-family: inherit;
+  transition: var(--transition-smooth);
+}
+
+/* Luxury Accent Rules */
+.gold-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--primary-green);
+}
+
+.gold-badge-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+}
+
+.gold-line {
+  display: inline-block;
+  width: 40px;
+  height: 1px;
+  background: var(--accent-gold);
+}
+
+/* Luxury Button Styles */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  background: var(--accent-gold);
+  color: var(--text-dark);
+  padding: 16px 28px;
+  border: 1px solid var(--accent-gold);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-gold:hover {
+  background: #a88435;
+  border-color: #a88435;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+  opacity: 1;
+}
+
+.btn-outline-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  background: transparent;
+  color: var(--accent-gold);
+  border: 1px solid rgba(191, 153, 68, 0.6);
+  padding: 16px 28px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-outline-gold:hover {
+  background: rgba(191, 153, 68, 0.1);
+  border-color: var(--accent-gold);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.btn-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  background: var(--primary-green);
+  color: var(--bg-light);
+  padding: 16px 28px;
+  border: 1px solid var(--primary-green);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-dark:hover {
+  background: #153a1a;
+  transform: translateY(-2px);
+}
+
+/* Container & Grid utilities */
+.container-luxury {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media (max-width: 768px) {
+  .container-luxury {
+    padding: 0 20px;
+  }
+}
+
+/* Card hover animation */
+.card-hover-lift {
+  transition: var(--transition-smooth);
+}
+
+.card-hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-elevated);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #ece9e2;
+}
+::-webkit-scrollbar-thumb {
+  background: #708A72;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #101C3A;
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-panel-dark {
+  background: rgba(16, 28, 58, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(191, 153, 68, 0.25);
+}
+
+/* Form inputs */
+.luxury-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 18px 22px;
+  background: rgba(30, 34, 41, 0.55);
+  border: 1px solid rgba(191, 153, 68, 0.35);
+  color: var(--bg-light);
+  font: 15px var(--font-sans);
+  transition: var(--transition-smooth);
+  outline: none;
+}
+
+.luxury-input:focus {
+  border-color: var(--accent-gold);
+  background: rgba(30, 34, 41, 0.75);
+  box-shadow: 0 0 0 2px rgba(191, 153, 68, 0.2);
+}
+
+.luxury-input-light {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 18px 22px;
+  background: #ffffff;
+  border: 1px solid rgba(112, 138, 114, 0.3);
+  color: var(--text-dark);
+  font: 15px var(--font-sans);
+  transition: var(--transition-smooth);
+  outline: none;
+}
+
+.luxury-input-light:focus {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 0 2px rgba(191, 153, 68, 0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.45s ease-out forwards;
+}
