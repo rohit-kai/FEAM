@@ -37,7 +37,8 @@ const DIRECTORS = [
     title: 'Founder & Managing Director, EAM Bangkok Co., Ltd.',
     academic: 'Master’s degree in International Banking and Finance from the University of Birmingham (UK)',
     roleTag: 'FOUNDER · 25+ YRS EXPERIENCE',
-    image: '/assets/managing-director.jpg',
+    image: '/assets/managing-director.png',
+    objectPosition: 'center center',
     stats: [
       { label: 'Leadership Exp.', value: '25+ Years' },
       { label: 'Academic Heritage', value: 'Birmingham (UK)' },
@@ -254,12 +255,10 @@ function DirectorCard({ director, onOpenEnquiry }) {
             alt={director.name}
             className="director-photo-img"
             style={{
-              transform: isHovered ? 'scale(1.05)' : 'scale(1)'
+              objectPosition: director.objectPosition || 'center center',
+              transform: isHovered ? 'scale(1.02)' : 'scale(1)'
             }}
           />
-
-          {/* Cinematic #0E4D44 Gradient Blend into Lower Card */}
-          <div className="photo-gradient-blend" aria-hidden="true" />
 
           {/* Floating Subtle Glass Status/Tenure Badge */}
           <div className="photo-glass-badge">
@@ -598,16 +597,19 @@ export default function ExecutiveLeadership({ onOpenEnquiry }) {
         .card-photo-upper {
           position: relative;
           width: 100%;
-          height: 380px;
+          aspect-ratio: 440 / 399;
+          height: auto;
           overflow: hidden;
           background: rgba(3, 21, 19, 0.4);
           border-top-left-radius: 17px;
           border-top-right-radius: 17px;
+          border-bottom: 1px solid rgba(14, 77, 68, 0.45);
         }
 
         @media (min-width: 768px) {
           .card-photo-upper {
-            height: 420px;
+            aspect-ratio: 440 / 399;
+            height: auto;
           }
         }
 
@@ -621,22 +623,13 @@ export default function ExecutiveLeadership({ onOpenEnquiry }) {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          object-position: top center;
+          object-position: center center;
           display: block;
-          transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+          transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .photo-gradient-blend {
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(
-            to bottom,
-            rgba(4, 21, 18, 0.1) 0%,
-            rgba(4, 21, 18, 0.3) 50%,
-            rgba(6, 32, 28, 0.88) 85%,
-            #072621 100%
-          );
-          pointer-events: none;
+          display: none;
         }
 
         .photo-glass-badge {
