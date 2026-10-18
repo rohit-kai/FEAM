@@ -147,10 +147,10 @@ export default function EnquiryModal({ isOpen, onClose, initialInterest = 'Gener
                   className="luxury-input"
                   style={{ cursor: 'pointer' }}
                 >
-                  <option value="Institutional & Private Co-Investment" style={{ background: '#101C3A' }}>Institutional &amp; Private Co-Investment</option>
-                  <option value="Commercial & Retail Tenancy Opportunities" style={{ background: '#101C3A' }}>Commercial &amp; Retail Tenancy Opportunities</option>
-                  <option value="Hospitality Advisory & Asset Management" style={{ background: '#101C3A' }}>Hospitality Advisory &amp; Asset Management</option>
-                  <option value="Land Acquisitions & Joint Venture Development" style={{ background: '#101C3A' }}>Land Acquisitions &amp; Joint Venture Development</option>
+                  <option value="Institutional & Private Co-Investment" style={{ background: '#0E4D44' }}>Institutional &amp; Private Co-Investment</option>
+                  <option value="Commercial & Retail Tenancy Opportunities" style={{ background: '#0E4D44' }}>Commercial &amp; Retail Tenancy Opportunities</option>
+                  <option value="Hospitality Advisory & Asset Management" style={{ background: '#0E4D44' }}>Hospitality Advisory &amp; Asset Management</option>
+                  <option value="Land Acquisitions & Joint Venture Development" style={{ background: '#0E4D44' }}>Land Acquisitions &amp; Joint Venture Development</option>
                 </select>
               </div>
 

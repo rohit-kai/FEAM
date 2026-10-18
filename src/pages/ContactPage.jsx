@@ -153,13 +153,19 @@ export default function ContactPage({ onNavigate, onOpenEnquiry }) {
             </div>
           </div>
 
-          {/* Form */}
+          {/* Form with Glassmorphism */}
           <div
             style={{
-              background: 'var(--primary-green)',
+              background: 'rgba(14, 77, 68, 0.88)',
               color: 'var(--bg-light)',
               padding: '48px 44px',
-              borderTop: '4px solid var(--accent-gold)'
+              border: '1px solid rgba(191, 153, 68, 0.4)',
+              borderTop: '1px solid rgba(255, 255, 255, 0.3)',
+              borderBottom: '4px solid var(--accent-gold)',
+              borderRadius: '8px',
+              backdropFilter: 'blur(32px) saturate(190%)',
+              WebkitBackdropFilter: 'blur(32px) saturate(190%)',
+              boxShadow: '0 24px 70px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
             }}
           >
             {isSubmitted ? (
@@ -204,7 +210,7 @@ export default function ContactPage({ onNavigate, onOpenEnquiry }) {
                       style={{ cursor: 'pointer' }}
                     >
                       {INQUIRY_CATEGORIES.map((cat, idx) => (
-                        <option key={idx} value={cat} style={{ background: '#101C3A' }}>
+                        <option key={idx} value={cat} style={{ background: '#0E4D44' }}>
                           {cat}
                         </option>
                       ))}

@@ -767,25 +767,15 @@ export default function HomePage({ onNavigate, onOpenEnquiry }) {
       {/* =========================================================================
           SECTION 7: CONTACT & INVESTOR RELATIONS
           ========================================================================= */}
+      {/* =========================================================================
+          SECTION 7: CONTACT & INVESTOR RELATIONS (GLASSMORPHISM)
+          ========================================================================= */}
       <section
         id="contact"
-        style={{
-          padding: '0 64px 112px',
-          background: 'var(--bg-light)'
-        }}
+        className="glass-ambient-container"
       >
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div
-            style={{
-              background: 'var(--primary-green)',
-              color: 'var(--bg-light)',
-              padding: '72px 80px',
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: '64px',
-              borderBottom: '3px solid var(--accent-gold)'
-            }}
-          >
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 40px', position: 'relative', zIndex: 10 }}>
+          <div className="glass-contact-box">
             {/* Left Narrative */}
             <div style={{ flex: '1 1 380px' }}>
               <div
@@ -810,7 +800,7 @@ export default function HomePage({ onNavigate, onOpenEnquiry }) {
                   margin: '0 0 20px',
                   fontFamily: 'var(--font-serif)',
                   fontWeight: 500,
-                  fontSize: '40px',
+                  fontSize: '44px',
                   lineHeight: 1.1,
                   color: 'var(--bg-light)'
                 }}
@@ -822,22 +812,26 @@ export default function HomePage({ onNavigate, onOpenEnquiry }) {
                 Direct engagement with our investment principals and advisory directors across multi-sector assets.
               </p>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', borderTop: '1px solid rgba(191, 153, 68, 0.35)', paddingTop: '24px' }}>
-                <div style={{ display: 'flex', gap: '14px', alignItems: 'center' }}>
-                  <Mail size={18} color="var(--accent-gold)" />
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', borderTop: '1px solid rgba(191, 153, 68, 0.28)', paddingTop: '28px' }}>
+                <div className="glass-info-pill" style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+                  <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'rgba(191, 153, 68, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', flexShrink: 0 }}>
+                    <Mail size={18} />
+                  </div>
                   <div>
-                    <div style={{ fontSize: '11px', letterSpacing: '.16em', textTransform: 'uppercase', opacity: 0.7 }}>Direct Email</div>
-                    <a href={`mailto:${COMPANY_INFO.email}`} style={{ fontSize: '16px', color: 'var(--accent-gold)' }}>
+                    <div style={{ fontSize: '11px', letterSpacing: '.16em', textTransform: 'uppercase', color: 'var(--secondary-sage)', fontWeight: 600 }}>Direct Email</div>
+                    <a href={`mailto:${COMPANY_INFO.email}`} style={{ fontSize: '16px', fontWeight: 500, color: 'var(--accent-gold)' }}>
                       {COMPANY_INFO.email}
                     </a>
                   </div>
                 </div>
 
-                <div style={{ display: 'flex', gap: '14px', alignItems: 'center' }}>
-                  <MapPin size={18} color="var(--accent-gold)" />
+                <div className="glass-info-pill" style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+                  <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'rgba(191, 153, 68, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', flexShrink: 0 }}>
+                    <MapPin size={18} />
+                  </div>
                   <div>
-                    <div style={{ fontSize: '11px', letterSpacing: '.16em', textTransform: 'uppercase', opacity: 0.7 }}>Office Location</div>
-                    <div style={{ fontSize: '16px' }}>{COMPANY_INFO.location}</div>
+                    <div style={{ fontSize: '11px', letterSpacing: '.16em', textTransform: 'uppercase', color: 'var(--secondary-sage)', fontWeight: 600 }}>Office Location</div>
+                    <div style={{ fontSize: '16px', fontWeight: 500, color: 'var(--bg-light)' }}>{COMPANY_INFO.location}</div>
                   </div>
                 </div>
               </div>
@@ -868,7 +862,7 @@ export default function HomePage({ onNavigate, onOpenEnquiry }) {
                       style={{ cursor: 'pointer' }}
                     >
                       {INQUIRY_CATEGORIES.map((cat, idx) => (
-                        <option key={idx} value={cat} style={{ background: '#101C3A' }}>
+                        <option key={idx} value={cat} style={{ background: '#0E4D44' }}>
                           {cat}
                         </option>
                       ))}

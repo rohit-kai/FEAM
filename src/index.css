@@ -3,9 +3,9 @@
    ========================================================================== */
 
 :root {
-  /* Default Primary Brand Color: Logo Navy */
-  --primary-green: #101C3A;
-  --primary-green-rgb: 16, 28, 58;
+  /* Default Primary Brand Color: #0E4D44 (Luxury Emerald / Teal) */
+  --primary-green: #0E4D44;
+  --primary-green-rgb: 14, 77, 68;
   --secondary-sage: #708A72;
   --secondary-sage-rgb: 112, 138, 114;
   --accent-gold: #BF9944;
@@ -233,7 +233,7 @@ button {
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #101C3A;
+  background: #0E4D44;
 }
 
 /* Glassmorphism */
@@ -245,29 +245,119 @@ button {
 }
 
 .glass-panel-dark {
-  background: rgba(16, 28, 58, 0.92);
+  background: rgba(14, 77, 68, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(191, 153, 68, 0.25);
 }
 
-/* Form inputs */
+/* Luxury Glassmorphic Contact Card & Components */
+.glass-ambient-container {
+  position: relative;
+  overflow: hidden;
+  padding: 32px 0 112px;
+  background: linear-gradient(180deg, var(--bg-light) 0%, #EFECE6 50%, var(--bg-light) 100%);
+}
+
+.glass-ambient-container::before {
+  content: '';
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(191, 153, 68, 0.18) 0%, rgba(191, 153, 68, 0) 70%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.glass-ambient-container::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  right: 12%;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(14, 77, 68, 0.22) 0%, rgba(14, 77, 68, 0) 70%);
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.glass-contact-box {
+  background: rgba(14, 77, 68, 0.82);
+  color: var(--bg-light);
+  padding: 72px 80px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 64px;
+  border: 1px solid rgba(191, 153, 68, 0.4);
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  border-bottom: 4px solid var(--accent-gold);
+  border-radius: 8px;
+  backdrop-filter: blur(32px) saturate(190%);
+  -webkit-backdrop-filter: blur(32px) saturate(190%);
+  box-shadow: 
+    0 32px 90px rgba(0, 0, 0, 0.32),
+    0 12px 32px rgba(14, 77, 68, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 0 25px rgba(191, 153, 68, 0.08);
+  position: relative;
+  z-index: 2;
+  transition: var(--transition-smooth);
+}
+
+.glass-contact-box:hover {
+  border-color: rgba(191, 153, 68, 0.55);
+  box-shadow: 
+    0 40px 100px rgba(0, 0, 0, 0.38),
+    0 16px 40px rgba(14, 77, 68, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    inset 0 0 30px rgba(191, 153, 68, 0.12);
+}
+
+.glass-info-pill {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(191, 153, 68, 0.28);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 18px 22px;
+  border-radius: 6px;
+  transition: var(--transition-smooth);
+}
+
+.glass-info-pill:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: var(--accent-gold);
+  transform: translateY(-2px);
+}
+
+/* Form inputs with glassmorphic refinement */
 .luxury-input {
   width: 100%;
   box-sizing: border-box;
   padding: 18px 22px;
-  background: rgba(30, 34, 41, 0.55);
-  border: 1px solid rgba(191, 153, 68, 0.35);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(191, 153, 68, 0.32);
   color: var(--bg-light);
   font: 15px var(--font-sans);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 4px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.25);
   transition: var(--transition-smooth);
   outline: none;
 }
 
 .luxury-input:focus {
   border-color: var(--accent-gold);
-  background: rgba(30, 34, 41, 0.75);
-  box-shadow: 0 0 0 2px rgba(191, 153, 68, 0.2);
+  background: rgba(255, 255, 255, 0.11);
+  box-shadow: 
+    0 0 18px rgba(191, 153, 68, 0.32),
+    inset 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .luxury-input-light {
