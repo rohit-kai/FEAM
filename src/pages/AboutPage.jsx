@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
+import ExecutiveLeadership from '../components/ExecutiveLeadership';
 import { COMPANY_INFO, CORE_VALUES, MISSION_PILLARS, LEADERSHIP } from '../data/siteData';
 import { Mail, Check, ChevronRight } from 'lucide-react';
 
@@ -158,110 +159,7 @@ export default function AboutPage({ onNavigate, onOpenEnquiry }) {
       </section>
 
       {/* Leadership & Governance Section */}
-      <section style={{ padding: '96px 48px', background: 'var(--bg-light)' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ maxWidth: '720px', marginBottom: '56px' }}>
-            <div className="gold-badge" style={{ marginBottom: '16px' }}>
-              <span className="gold-line" />
-              Leadership &amp; Governance
-            </div>
-            <h2
-              style={{
-                fontFamily: 'var(--font-serif)',
-                fontSize: '42px',
-                color: 'var(--text-dark)',
-                marginBottom: '16px'
-              }}
-            >
-              Executive Leadership
-            </h2>
-          </div>
-
-          {/* Founder Profile */}
-          <div
-            style={{
-              background: '#ffffff',
-              border: '1px solid rgba(112, 138, 114, 0.3)',
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '40px',
-              overflow: 'hidden',
-              alignItems: 'center',
-              marginBottom: '56px',
-              boxShadow: 'var(--shadow-subtle)'
-            }}
-          >
-            <div style={{ height: '100%', minHeight: '380px' }}>
-              <img
-                src={LEADERSHIP.founder.image}
-                alt={LEADERSHIP.founder.name}
-                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }}
-              />
-            </div>
-            <div style={{ padding: '40px 48px 40px 0' }}>
-              <div style={{ fontSize: '11px', letterSpacing: '.2em', textTransform: 'uppercase', color: 'var(--secondary-sage)', fontWeight: 600, marginBottom: '6px' }}>
-                Founder &amp; Managing Director
-              </div>
-              <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '34px', color: 'var(--primary-green)', marginBottom: '8px' }}>
-                {LEADERSHIP.founder.name}
-              </h3>
-              <div style={{ fontSize: '13px', fontWeight: 600, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent-gold-dark)', marginBottom: '20px' }}>
-                {LEADERSHIP.founder.title}
-              </div>
-              <p style={{ fontSize: '16px', lineHeight: 1.8, color: 'var(--text-dark)', marginBottom: '24px' }}>
-                {LEADERSHIP.founder.bio}
-              </p>
-              <a
-                href={`mailto:${LEADERSHIP.founder.email}`}
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  padding: '12px 22px',
-                  border: '1px solid var(--secondary-sage)',
-                  borderRadius: '999px',
-                  fontSize: '12px',
-                  fontWeight: 600,
-                  color: 'var(--primary-green)'
-                }}
-              >
-                <Mail size={15} />
-                <span>Contact Leadership</span>
-              </a>
-            </div>
-          </div>
-
-          {/* Executive Board & Advisory Focus */}
-          <div>
-            <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '28px', color: 'var(--primary-green)', marginBottom: '24px' }}>
-              Executive Board &amp; Advisory Focus
-            </h3>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '28px' }}>
-              {LEADERSHIP.advisoryFocus.map((focus, idx) => (
-                <div
-                  key={idx}
-                  style={{
-                    background: '#ffffff',
-                    border: '1px solid rgba(112, 138, 114, 0.25)',
-                    borderTop: '3px solid var(--accent-gold)',
-                    padding: '32px 28px'
-                  }}
-                >
-                  <div style={{ fontSize: '11px', letterSpacing: '.18em', textTransform: 'uppercase', color: 'var(--secondary-sage)', fontWeight: 600, marginBottom: '8px' }}>
-                    Advisory Focus 0{idx + 1}
-                  </div>
-                  <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '22px', color: 'var(--text-dark)', marginBottom: '10px' }}>
-                    {focus.title}
-                  </h4>
-                  <p style={{ fontSize: '14.5px', lineHeight: 1.7, color: 'var(--text-muted)' }}>
-                    {focus.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <ExecutiveLeadership onOpenEnquiry={onOpenEnquiry} />
 
       {/* Core Values Section */}
       <section style={{ padding: '96px 48px', background: '#ffffff' }}>

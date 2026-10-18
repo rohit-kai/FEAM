@@ -63,9 +63,10 @@ export const MISSION_PILLARS = [
 export const LEADERSHIP = {
   founder: {
     name: 'Supakit Eimsamank',
-    title: 'Founder & Managing Director',
+    title: 'Founder & Managing Director, EAM Bangkok Co., Ltd.',
     role: 'Founder & Managing Director',
-    bio: "Oversees corporate strategy, investment structuring, and asset development across EAM Bangkok's portfolio. He founded the firm in 2004 to professionalize and expand family real estate assets, leveraging extensive experience in commercial leasing, land repositioning, and hospitality partnerships across Southeast Asia.",
+    academic: 'Master’s degree in International Banking and Finance from the University of Birmingham (UK)',
+    bio: 'Brings over 25 years of leadership experience across the Thai real estate and hospitality investment landscape. Launched his career with Jones Lang LaSalle (JLL) and held senior executive positions at Central Pattana PCL, CP Land, and The Erawan Group PCL prior to founding EAM Bangkok in 2004.',
     image: '/assets/managing-director.jpg',
     email: 'Contact@aeminvestment.com'
   },
